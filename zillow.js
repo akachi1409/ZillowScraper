@@ -85,13 +85,12 @@ var zillowStart = async function(con) {
                         const ctime = moment().format("HH:mm:ss");
                         
                         const queryInsert =
-                            "INSERT IGNORE INTO zillow (  fulladdress, zip, status, url, cdate, ctime) VALUES (?,?,?,?,?,?) ";
+                            "INSERT IGNORE INTO zillow (  fulladdress, status, url, cdate, ctime) VALUES (?,?,?,?,?) ";
                         const queryUpdate = "UPDATE zillow SET ctime = ? WHERE SUBSTR(cdate,1,10)=CURDATE()";
                         if (capacity==0 ){
                             await con.query(
                                 queryInsert, [
                                    data.fulladdress,
-                                   data.zip,
                                    data.status,
                                    data.url,
                                    cdate,
