@@ -9,8 +9,14 @@ const delay = require('delay');
 
 const base = "https://www.zillow.com/browse/homes/";
 const endpoint = "https://www.zillow.com";
-var testStart = async function() {
+var zillowStart = async function(con) {
     console.log("fetching data from test....");
+
+    var qr = 'SELECT COUNT(*) AS num FROM 3invest_data_test.zillow';
+    const capacity_temp = await con.query(qr);
+    capacity_temp[0].map(row => {
+        capacity = row.num;
+    })
 
     const res = await got(base);
     const dom = new JSDOM(res.body);
@@ -102,4 +108,4 @@ var testStart = async function() {
     }
 }
 
-testStart()
+exports.zillowStart = zillowStart
