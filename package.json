@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "agentkeepalive": "^4.1.4",
+    "axios": "^0.22.0",
+    "delay": "^5.0.0",
+    "got": "^11.8.2",
+    "https": "^1.0.0",
+    "jsdom": "^18.0.0",
+    "puppeteer-extra": "^3.2.3",
+    "puppeteer-extra-plugin-stealth": "^2.9.0",
+    "random-useragent": "^0.5.0"
+  }
+}
