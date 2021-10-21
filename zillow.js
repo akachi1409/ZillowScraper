@@ -12,7 +12,7 @@ const endpoint = "https://www.zillow.com";
 var zillowStart = async function(con) {
     console.log("fetching data from test....");
 
-    var qr = 'SELECT COUNT(*) AS num FROM 3invest_data_test.zillow';
+    var qr = 'SELECT COUNT(*) AS num FROM test.zillow';
     const capacity_temp = await con.query(qr);
     capacity_temp[0].map(row => {
         capacity = row.num;
